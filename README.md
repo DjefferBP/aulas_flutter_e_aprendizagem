@@ -1,17 +1,7 @@
-# app_teste_1
+# Estudo Flutter
 
-A new Flutter project.
+Este repositório reúne exercícios e pequenos aplicativos feitos em **Dart/Flutter**.  
 
-## Getting Started
+O objetivo é **praticar programação mobile**, entendendo como criar interfaces, gerenciar estados, lidar com listas, formulários e interações do usuário.  
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Estou usando esse repositório como **laboratório pessoal** enquanto estudo para a **WorldSkills**, aprimorando lógica, organização de código e experiência com Flutter/Dart.
