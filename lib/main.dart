@@ -1,80 +1,57 @@
 import 'package:flutter/material.dart';
-import 'package:app_teste_1/exercicios_base/ToDoSimplespage.dart';
-
+import 'package:app_teste_1/app_scaffold.dart';
+import 'package:app_teste_1/exercicios_base/ListaDeComprasToDoPage.dart';
 
 void main() {
-  runApp(TodosimplesPage());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: HomePage(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: MainHubPage());
   }
 }
 
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-class _HomePageState extends State<HomePage> {
-int _contador = 0;
-
+class MainHubPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    
-
-    void incrementar() {
-      setState(() {
-        _contador += 1;
-      }); 
-    }
-
-    void decrementar() {
-      setState(() {
-        _contador -= 1;
-      });
-    }
-
-    return Scaffold(
+    return AppScaffold(
+      title: "Apps",
       body: Center(
         child: Column(
-          mainAxisAlignment: .center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Center(
-              child: Text("$_contador", style: TextStyle(
-                color: _contador > 0 ? Colors.green : Colors.red,
-                fontWeight: FontWeight.bold,
-                fontSize: 34
-              ),),
+            Text(
+              "Bem-vindo \nEscolhe um projeto no menu",
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 30),
+
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => ListaDeComprasPage()),
+                );
+              },
+              icon: Icon(Icons.shopping_cart, color: Colors.black),
+              label: Text(
+                "Ir para Lista de Compras",
+                style: TextStyle(color: Colors.black45),
+              ),
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                textStyle: TextStyle(fontSize: 16),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
             ),
           ],
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-
-      floatingActionButton: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          FloatingActionButton(
-                  onPressed:incrementar,
-                  child: Icon(Icons.add),
-                  backgroundColor: const Color.fromARGB(255, 34, 133, 37),
-                  foregroundColor: Colors.white,
-                ),
-                SizedBox(width: 10,),
-                FloatingActionButton(
-                  onPressed:decrementar,
-                  child: Icon(Icons.remove),
-                  backgroundColor: const Color.fromARGB(255, 137, 56, 51),
-                  foregroundColor: Colors.white,
-                )
-        ],
-      )
-      
     );
   }
 }
